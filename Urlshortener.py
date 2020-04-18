@@ -1,6 +1,5 @@
 import requests
-import pymongo
-#from random import randint
+from random import randint
 
 class Urlshortener():
   __id = 1000000000
@@ -14,7 +13,7 @@ class Urlshortener():
       else:
         self.__urlidlist[originalUrl] = self.__id
         shortenUrl = self.encode(self.__id)
-        self.__id += 1
+        self.__id += randint(1,5000)
 
       return "severosurl.com/"+str(shortenUrl)
     else:
